@@ -61,8 +61,10 @@ while new_game:
                 if hit == "n":
 
                     if dealer_total < 17:
-                        print(dealer_cards)
                         dealer_add_card()
+                        dealer_total = 0
+                        for i in dealer_cards:
+                            dealer_total += i
                     end_game(player_card, player_total, dealer_cards, dealer_total)
 
                     if player_total > dealer_total:
